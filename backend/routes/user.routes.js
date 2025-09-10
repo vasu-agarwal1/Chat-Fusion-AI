@@ -6,9 +6,8 @@ const router = Router()
 
 
 router.post('/register',
-    body('email').isEmail().withMessage('Email must be a valid email address'),
+    body('email').isEmail().withMessage('Email must be a valid email address'), // this is express validator to validate email and password
     body('password').isLength({min: 3}).withMessage('password must be atleast 3 characters long'),
-
     userController.createUserController)
 
     router.post('/login', 

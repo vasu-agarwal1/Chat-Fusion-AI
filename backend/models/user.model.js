@@ -32,6 +32,6 @@ userSchema.methods.generateJWT = function () {
      return jwt.sign({email: this.email }, process.env.JWT_SECRET)
 }
 
-const user = mongoose.model('user', userSchema)
+const User = mongoose.model('user', userSchema)
 
-export default user
+export default User
